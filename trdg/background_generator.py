@@ -16,7 +16,8 @@ def gaussian_noise(height: int, width: int) -> Image:
     image = np.ones((height, width)) * 255
 
     # We add gaussian noise
-    cv2.randn(image, 235, 10)
+    # cv2.randn(image, 235, 10)
+    cv2.randn(image, 10, 10)
 
     return Image.fromarray(image).convert("RGBA")
 
@@ -26,7 +27,8 @@ def plain_white(height: int, width: int) -> Image:
     Create a plain white background
     """
 
-    return Image.new("L", (width, height), 255).convert("RGBA")
+    # return Image.new("L", (width, height), 255).convert("RGBA")
+    return Image.new("L", (width, height), 0).convert("RGBA")
 
 
 def quasicrystal(height: int, width: int) -> Image:
